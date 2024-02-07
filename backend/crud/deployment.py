@@ -7,6 +7,7 @@ CSRF_TRUSTED_ORIGINS = ['https://'+os.environ['WEBSITE_HOSTNAME']]
 DEBUG = False
 SECRET_KEY = os.environ['MY_SECRET_KEY']
 
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -20,7 +21,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'https://gentle-bay-0a5eef010.4.azurestaticapps.net',
+    'https://gentle-bay-0a5eef010.4.azurestaticapps.net/',
 ]
 
 STORAGES = {
