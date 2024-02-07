@@ -58,43 +58,27 @@ const Create = () => {
   const {handleSubmit, control} = useForm({defaultValues:defaultValues, resolver: yupResolver(schema)})
 
 
-  const submission = async (data) => {
-    try {
-      // Format date strings using toISOString()
-      const StartDate = data.start_date.toISOString().split('T')[0];
-      const EndDate = data.end_date.toISOString().split('T')[0];
-  
-      const response = await fetch(`http://127.0.0.1:8001/project/`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: data.name,
-          projectmanager: data.projectmanager,
-          status: data.status,
-          comments: data.comments,
-          start_date: StartDate,
-          end_date: EndDate,
-        }),
-      });
-  
-      if (!response.ok) {
-        // Handle non-2xx status codes (e.g., validation error)
-        console.error('Error:', response.status, response.statusText);
-        const errorData = await response.json();
-        console.error('Error Data:', errorData);
-        // Handle the error appropriately
-      } else {
-        // Request was successful
-        navigate(`/`);
-      }
-    } catch (error) {
-      console.error('Error submitting the form:', error);
-      // Handle the error appropriately
+    const submission = (data) => 
+    {
+      const StartDate = Dayjs(data.start_date["$d"]).format("YYYY-MM-DD")
+      const EndDate = Dayjs(data.end_date["$d"]).format("YYYY-MM-DD")
+      
+      AxiosInstance.post( `project/`,{
+        name: data.name,
+        projectmanager: data.projectmanager,
+        status: data.status,
+        comments: data.comments, 
+        start_date: StartDate, 
+        end_date: EndDate,
+
+      })
+
+      .then((res) =>{
+        navigate(`/`)
+      })
+
+
     }
-  };
-  
   
   return (
     <div>
