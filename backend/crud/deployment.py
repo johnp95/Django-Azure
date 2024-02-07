@@ -21,7 +21,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'https://gentle-bay-0a5eef010.4.azurestaticapps.net/',
+    'https://gentle-bay-0a5eef010.4.azurestaticapps.net',
 ]
 
 STORAGES = {
