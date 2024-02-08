@@ -20,7 +20,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'https://gentle-bay-0a5eef010.4.azurestaticapps.net',
+    'https://zealous-forest-07b758910.4.azurestaticapps.net',
 ]
 
 
