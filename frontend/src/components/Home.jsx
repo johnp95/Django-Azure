@@ -9,7 +9,6 @@ import {Link} from 'react-router-dom'
 
 const Home = () => {
 
-
   const [myData,setMydata] = useState()
   const [loading,setLoading] = useState(true)
 
