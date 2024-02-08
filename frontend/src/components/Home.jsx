@@ -19,7 +19,10 @@ const Home = () => {
       setLoading(false)
  
     })
-
+    .catch((error) => {
+      console.error('Axios Error:', error);
+      setLoading(false);
+    });
   }
 
   useEffect(() => {
