@@ -65,7 +65,7 @@ TEMPLATES = [
     },
 ] 
 
-STATIC_ROOT = BASE_DIR/'staticfiles'
+STATIC_ROOT = ( BASE_DIR.as_posix() + '/static' )
 
 WSGI_APPLICATION = 'crud.wsgi.application'
 
