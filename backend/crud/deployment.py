@@ -21,6 +21,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     'https://zealous-forest-07b758910.4.azurestaticapps.net',
+    'http://localhost:3000'
 ]
 
 
